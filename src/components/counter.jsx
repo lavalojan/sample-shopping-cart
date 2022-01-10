@@ -3,16 +3,16 @@ import React, { Component } from 'react';
 
 class Counter extends React.Component {
     state = {
-        count: 0
+        count: 7
     }
 
-    style = {
-        fontSize : 10,
-        fontWeight : 'Bold'
-    }
     render() { 
-        return (<div>
-            <span style={this.style} className='badge badge-primary m-2'>{this.formatCount()}</span>
+        
+            let classes="badge m-2 badge-";
+            classes += this.state.count===0? "warning":"primary";
+            return (<div>
+                <span className={classes}>
+                 {this.formatCount()}</span>
             <button className='btn btn-secondary btn-sm'>increment</button>
             </div>);
     }
