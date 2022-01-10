@@ -5,15 +5,20 @@ class Counter extends React.Component {
     state = {
         count: 0
     }
+
+    style = {
+        fontSize : 10,
+        fontWeight : 'Bold'
+    }
     render() { 
         return (<div>
-            <span>{this.formatCount()}</span>
-            <button>increment</button>
+            <span style={this.style} className='badge badge-primary m-2'>{this.formatCount()}</span>
+            <button className='btn btn-secondary btn-sm'>increment</button>
             </div>);
     }
 
     formatCount(){
-        return (this.state.count===0 ? <h1>zero</h1>: this.state.count);
+        return (this.state.count===0 ? "Zero": this.state.count);
     }
 }
  
